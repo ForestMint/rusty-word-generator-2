@@ -15,12 +15,12 @@ fn pick_next_character(value : char) -> char{
     c
 }
 
-fn parse_training_set() -> std::io::Result<()> {
+fn parse_training_set(path : &str) -> std::io::Result<()> {
 
 
 
     // Open the file for reading
-    let file = File::open("training_set.txt")?;
+    let file = File::open(path)?;
 
     // Create a buffered reader to read the file
     let reader = BufReader::new(file);
@@ -37,7 +37,7 @@ fn parse_training_set() -> std::io::Result<()> {
 fn main () {
     //let foo = 10;
     //println!("The value of foo is {foo}"); 
-    parse_training_set();
+    parse_training_set("training_set.txt");
     generate_word("");
 }
 
